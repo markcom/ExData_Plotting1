@@ -16,6 +16,7 @@ DateTime <- selectedGraphData$DateTime
 
 
 #Set graph margin and plot the graph
+png("plot3.png")
 par(mar = c(2,4,4,2))
 
 plot(range(DateTime), range(metering_1, metering_2, metering_3),
@@ -28,7 +29,9 @@ lines(DateTime, metering_3, col = "blue")
 legend("topright", lty = 1, col = c("black", "blue", "red"), cex=0.7,
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
+dev.off()
 
 #Save the graph to PNG
-dev.copy(png, filename="plot3.png")
-dev.off ()
+#dev.copy(png, filename="plot3.png")
+#dev.off ()
+#using the dev.copy not all info was visible in the plot3.png

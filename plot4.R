@@ -19,6 +19,7 @@ DateTime <- selectedGraphData$DateTime
 
 
 #Set graph mfcol
+png("plot4.png")
 par(mfcol = c(2, 2), cex.axis=.8)
 
 #Graph 1
@@ -33,7 +34,7 @@ plot(range(DateTime), range(metering_1, metering_2, metering_3),
 lines(DateTime, metering_1, col = "black")
 lines(DateTime, metering_2, col = "red")
 lines(DateTime, metering_3, col = "blue")
-legend("topright", lty = 1, bty="n", col = c("black", "blue", "red"), 
+legend("topright", lty = 1, bty="n", col = c("black", "blue", "red"), cex=0.7,
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 
@@ -50,5 +51,5 @@ lines(DateTime, Global_reactive_power)
 
 
 #Save the graph to PNG
-dev.copy(png, filename="plot4.png")
+#dev.copy(png, filename="plot4.png")
 dev.off ()
